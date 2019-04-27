@@ -66,8 +66,8 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineQueryResult
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, InlineQueryHandler
 config = configparser.RawConfigParser()
 config.read('rail.cfg')
-token=config.get('telegram','token')
-key=config.get('railwayAPI','key')
+token=os.environ.get('TOKEN', None)
+key=os.environ.get('raiwayAPI', None)
 logging.info(key)
 logging.info(token)
 def start(bot, update):
